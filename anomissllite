@@ -75,6 +75,7 @@ local creds = UiPage:addSection("Developers: H4#0321")
 local UISection2 = UiPage:addSection("Discord: https://discord.gg/mkv55KWCsp")
 local UISection2 = UiPage:addSection("Credits: EdgeIY, for the fly, Alwayswin for a few FE features when we merged.")
 local UISection3 = UiPage:addSection("Patched: commandblock")
+local UISection4 = UiPage:addSection("jaysterrz for esp fix")
 
 -- ESP
 local esp_Enabled      = false
@@ -1544,7 +1545,7 @@ end)
 
 game:GetService("RunService").RenderStepped:connect(function()       
    if esp_Enabled then       
-        for _,v in pairs(Players:GetChildren()) do
+        for _,v in pairs(Players:GetPlayers()) do
             if v.Character and v.Character:FindFirstChild("Humanoid") and v.Character:FindFirstChild("Humanoid").Health > 0 and v ~= LPlayer then
             local part = v.Character.HumanoidRootPart             
             local distance = LPlayer:DistanceFromCharacter(v.Character.HumanoidRootPart.Position)
@@ -1569,7 +1570,7 @@ game:GetService("RunService").RenderStepped:connect(function()
                             game.Workspace.CurrentCamera:WorldToViewportPoint(part.CFrame.Position+part.CFrame.UpVector*(3+(part.Position-game.Workspace.CurrentCamera.CFrame.Position).Magnitude/25)).X,
                             game.Workspace.CurrentCamera:WorldToViewportPoint(part.CFrame.Position+part.CFrame.UpVector*(3+(part.Position-game.Workspace.CurrentCamera.CFrame.Position).Magnitude/40)).Y)
                         coroutine.wrap(function()
-                        game.RunService.RenderStepped:Wait()
+                        game:GetService("RunService").RenderStepped:Wait()
                         a:Remove()
                         end)()
                     end                    
@@ -1595,7 +1596,7 @@ game:GetService("RunService").RenderStepped:connect(function()
                             game.Workspace.CurrentCamera:WorldToViewportPoint(part.CFrame.Position+part.CFrame.RightVector*2.5+part.CFrame.UpVector*-2.5).X,
                             game.Workspace.CurrentCamera:WorldToViewportPoint(part.CFrame.Position+part.CFrame.RightVector*2.5+part.CFrame.UpVector*-2.5).Y)
                         coroutine.wrap(function()
-                        game.RunService.RenderStepped:Wait()
+                        game:GetService("RunService").RenderStepped:Wait()
                             c:Remove()
                         end)()
                         local e=Drawing.new("Quad")
@@ -1617,7 +1618,7 @@ game:GetService("RunService").RenderStepped:connect(function()
                             game.Workspace.CurrentCamera:WorldToViewportPoint(part.CFrame.Position+part.CFrame.RightVector*2.5+part.CFrame.UpVector*-2.5).X,
                             game.Workspace.CurrentCamera:WorldToViewportPoint(part.CFrame.Position+part.CFrame.RightVector*2.5+part.CFrame.UpVector*-2.5).Y)
                         coroutine.wrap(function()
-                            game.RunService.RenderStepped:Wait()
+                            game:GetService("RunService").RenderStepped:Wait()
                             e:Remove()
                         end)()
                         local d=Drawing.new("Quad")
@@ -1635,7 +1636,7 @@ game:GetService("RunService").RenderStepped:connect(function()
                         d.PointC=c.PointC
                         d.PointD=c.PointD
                         coroutine.wrap(function()
-                            game.RunService.RenderStepped:Wait()
+                            game:GetService("RunService").RenderStepped:Wait()
                             d:Remove()
                         end)()
                     end     
@@ -1660,7 +1661,7 @@ game:GetService("RunService").RenderStepped:connect(function()
                             game.Workspace.CurrentCamera:WorldToViewportPoint(part.CFrame.Position+part.CFrame.UpVector*(3+(part.Position-game.Workspace.CurrentCamera.CFrame.Position).Magnitude/25)).X,
                             game.Workspace.CurrentCamera:WorldToViewportPoint(part.CFrame.Position+part.CFrame.UpVector*(3+(part.Position-game.Workspace.CurrentCamera.CFrame.Position).Magnitude/75)).Y)
                         coroutine.wrap(function()
-                        game.RunService.RenderStepped:Wait()
+                        game:GetService("RunService").RenderStepped:Wait()
                         a:Remove()
                         end)()
                     end   
@@ -1684,7 +1685,7 @@ game:GetService("RunService").RenderStepped:connect(function()
                             game.Workspace.CurrentCamera:WorldToViewportPoint(part.CFrame.Position+part.CFrame.RightVector*-2+part.CFrame.UpVector*-2.5).X,
                             game.Workspace.CurrentCamera:WorldToViewportPoint(part.CFrame.Position+part.CFrame.RightVector*-2+part.CFrame.UpVector*-2.5).Y)-->V
                         coroutine.wrap(function()
-                            game.RunService.RenderStepped:Wait()
+                            game:GetService("RunService").RenderStepped:Wait()
                             a:Remove()
                         end)()
                     end
@@ -1705,7 +1706,7 @@ game:GetService("RunService").RenderStepped:connect(function()
                         end
                         t.To = Vector2.new(Vec.X, Vec.Y)          
                         coroutine.wrap(function()
-                            game.RunService.RenderStepped:Wait()
+                            game:GetService("RunService").RenderStepped:Wait()
                             t:Remove()
                         end)()                        
                     end                                      
@@ -1772,7 +1773,7 @@ game:GetService("RunService").RenderStepped:connect(function()
                     toolTag.Transparency = 1
                     toolTag.Position = Vector2.new(vec.X,vec.Y)
                     coroutine.wrap(function()
-                        game.RunService.RenderStepped:Wait()
+                        game:GetService("RunService").RenderStepped:Wait()
                         toolTag:Remove()
                     end)()
                  end
@@ -1781,8 +1782,8 @@ game:GetService("RunService").RenderStepped:connect(function()
     end    
 end)
 
-notify("Anomic V", "Scripts made by H4#0321 (new account)")
-notify("Anomic V", "Info can be found in discord")
+notify("Anomic L", "Scripts made by h4developer")
+notify("Anomic L", "Unpatched by commandblock")
 
 wait(.3)
 
