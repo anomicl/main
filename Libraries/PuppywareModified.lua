@@ -961,7 +961,7 @@ function library:page(props)
 		}
 	)
   local NewToggleLabelSize = TextService:GetTextSize(label.Text, label.TextSize, label.Font, Vector2.new(math.huge,math.huge))
-            label.Size = UDim2.new(0, NewToggleLabelSize.X + 6, 0, 22)
+            label.Size = UDim2.new(0, NewToggleLabelSize.X, 0, 0)
 	--
 	local pageholder = utility.new(
 		"Frame",
