@@ -28,6 +28,7 @@ local uis = game:GetService("UserInputService")
 local hs = game:GetService("HttpService")
 local ws = game:GetService("Workspace")
 local plr = plrs.LocalPlayer
+local TextService = game:GetService("TextService")
 local cam = ws.CurrentCamera
 -- // indexes
 library.__index = library
