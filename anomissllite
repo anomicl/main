@@ -6,10 +6,6 @@ if game:GetService("CoreGui"):FindFirstChild(mainName) then
     game.CoreGui[mainName]:Destroy()
 end
 
-hookfunction(error, function(string)
-    warn("Error Detected: "..string)
-end)
-
 -- Library
 local library = loadstring(game:HttpGet("https://cmdblox.github.io/Anomic-L/scripts/anomicllib.lua"))()
 local Main = library.new(mainName)
